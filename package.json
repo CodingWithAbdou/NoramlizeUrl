@@ -1,0 +1,24 @@
+{
+  "name": "noramlizeurl",
+  "version": "1.0.0",
+  "description": "For review concepts of url and review http network",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node .main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingWithAbdou/NoramlizeUrl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodingWithAbdou/NoramlizeUrl/issues"
+  },
+  "homepage": "https://github.com/CodingWithAbdou/NoramlizeUrl#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
