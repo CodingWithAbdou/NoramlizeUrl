@@ -1,6 +1,29 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
+async function crawlingPage(urlPage) {
+  try {
+    console.log("... actively Crawling : ", urlPage);
+    const response = await fetch(urlPage);
+    if (response.status > 399) {
+      console.log(
+        `Error In fetch :${response.status} , On the Website : ${urlPage}`
+      );
+      return;
+    }
+    const contentType = response.headers.get("content-type");
+    if (!contentType.includes("text/html")) {
+      console.log(
+        `Non HTML response ,| contetnt-type  :${contentType} , On the Website :  ${urlPage}`
+      );
+      return;
+    }
+    console.log(await response.text());
+  } catch (err) {
+    console.log(`Error : ${err.message}`);
+  }
+}
+
 function getLinksFromHtml(HTMLDom, baseUrl) {
   const array = [];
   const dom = new JSDOM(HTMLDom);
@@ -42,4 +65,5 @@ function checkUrl(url) {
 module.exports = {
   checkUrl,
   getLinksFromHtml,
+  crawlingPage,
 };
