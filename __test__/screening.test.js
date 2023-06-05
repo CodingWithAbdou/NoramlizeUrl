@@ -1,4 +1,4 @@
-const { checkUrl, getLinksFromHtml } = require("../main.js");
+const { checkUrl, getLinksFromHtml } = require("../js/screening.js");
 const { expect } = require("@jest/globals");
 
 test("test url without protocol (https and http ..)", () => {
